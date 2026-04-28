@@ -1,27 +1,39 @@
 import { Component } from '@angular/core';
-import { CounterOutput } from "../counter-output/counter-output";
+import { NgRx } from "../../angular-interview/ng-rx/ng-rx";
 import { Buttons } from "../buttons/buttons";
+import { CounterOutput } from "../counter-output/counter-output";
+import { Store } from '@ngrx/store';
+import { CounterInput } from "../counter-input/counter-input";
 
 @Component({
   selector: 'app-counter',
-  imports: [CounterOutput, Buttons],
   templateUrl: './counter.html',
   styleUrl: './counter.css',
+  imports: [NgRx, Buttons, CounterOutput, CounterInput],
 })
 export class Counter {
 
-  counterValue: number = 0;
+  // counter: number = 0;
 
-  incrementCounter() {
-    this.counterValue++;
-  }
+  // constructor( private store: Store<{ counter: { counter: number } }>) { }
 
-  decrementCounter() {
-    this.counterValue--;
-  }
+  // ngOnInit() {
+  //   this.store.select('counter').subscribe(data => {
+  //     this.counter = data.counter;
+  //   });
+  // }
 
-  resetCounter() {
-    this.counterValue = 0;
-  }
+
+  // incrementCounter() {
+  //   this.counterValue++;
+  // }
+
+  // decrementCounter() {
+  //   this.counterValue--;
+  // }
+
+  // resetCounter() {
+  //   this.counterValue = 0;
+  // }
 
 }

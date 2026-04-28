@@ -1,3 +1,12 @@
-export const intialState = {
-  counter: 0
+export interface CounterState {
+  counter: number;
+  channelName: string;
+} 
+
+export const initialState: CounterState = {
+  counter: 5,
+  channelName: 'Angular_NgRx',
 };
+
+
+
