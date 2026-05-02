@@ -3,15 +3,16 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
-import { counterReducer } from './counter/state/counter.reduder';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { appReducer } from './store/app.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes), provideClientHydration(withEventReplay()),
-    provideStore({ counter: counterReducer }),
+    provideRouter(routes), 
+    provideClientHydration(withEventReplay()),
+    provideStore(appReducer),
     provideStoreDevtools({ logOnly: !isDevMode() })
 ]
 };

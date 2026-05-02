@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { CounterState } from '../state/counter.state';
 import { Store } from '@ngrx/store';
-import { setCounterData, updateChannelName } from '../state/counter.action';
+import { createCounterAction, updateChannelName } from '../state/counter.action';
 import { selectChannelName } from '../state/counter.selectors';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { AppState } from '../../store/app.state';
 
 @Component({
   selector: 'app-counter-input',
@@ -19,19 +19,19 @@ export class CounterInput {
   
   channelName$!: Observable<string>;
 
-  constructor(private store: Store<{ counter: CounterState }>) { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.channelName$ = this.store.select(selectChannelName);
   }
 
   setCounter() {
-    this.store.dispatch(setCounterData({ counter: this.inputValue }));
+    this.store.dispatch(createCounterAction({ counter: this.inputValue }));
     console.log('Counter value set to:', this.inputValue);
   } 
 
   onUpdateChannelName() {
-    this.store.dispatch(updateChannelName());
+    this.store.dispatch(updateChannelName({ channelName: "Updated Channel Name" }));
     console.log('Channel name updated');   
   }
 

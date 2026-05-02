@@ -9,7 +9,7 @@ import { CounterInput } from "../counter-input/counter-input";
   selector: 'app-counter',
   templateUrl: './counter.html',
   styleUrl: './counter.css',
-  imports: [NgRx, Buttons, CounterOutput, CounterInput],
+  imports: [Buttons, CounterOutput, CounterInput],
 })
 export class Counter {
 
