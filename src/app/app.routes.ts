@@ -1,11 +1,8 @@
 import { Routes } from '@angular/router';
-import { Counter } from './counter/counter/counter';
 import { NgRx } from './angular-interview/ng-rx/ng-rx';
 import { Home } from './home/home';
-import { BlogList } from './blogs/blog-list/blog-list';
 import { About } from './about/about';
 import { Contact } from './contact/contact';
-import { AddBlog } from './blogs/add-blog/add-blog';
 
 export const routes: Routes = [
   {
@@ -22,21 +19,13 @@ export const routes: Routes = [
   },
   {
     path: 'counter',
-    component: Counter,
+    loadComponent: () =>
+      import('./counter/counter/counter').then(m => m.Counter)
   },
   {
     path: 'blogs',
-    component: BlogList,
-    children: [
-      {
-        path: 'add-blog',
-        component: AddBlog
-      },
-      {
-        path: 'edit/:id',
-        component: AddBlog
-      }
-    ]
+    loadChildren: () =>
+      import('./blogs/blogs/blogs-routes').then(m => m.routes)
   },
   {
     path: 'about',

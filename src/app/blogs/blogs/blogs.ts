@@ -4,18 +4,18 @@ import { AppState } from '../../store/app.state';
 import { Observable } from 'rxjs';
 import { selectBlogs } from '../state/blogs.selectors';
 import { BlogInterface } from '../modals/blogs.modal';
-import { AsyncPipe } from '@angular/common';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { RouterLink, RouterModule, RouterOutlet } from '@angular/router';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { deleteBlog } from '../state/blogs.actions';
 
 @Component({
-  selector: 'app-blog-list',
-  imports: [AsyncPipe, RouterLink, RouterOutlet],
-  templateUrl: './blog-list.html',
-  styleUrl: './blog-list.scss',
+  selector: 'app-blogs',
+  imports: [RouterLink, RouterOutlet, CommonModule],
+  templateUrl: './blogs.html',
+  styleUrl: './blogs.scss',
 })
-export class BlogList {
+export class Blogs {
 
   // blogs$: Observable<BlogInterface[]> = new Observable<BlogInterface[]>();
   blogs$: Observable<BlogInterface[]> | undefined;

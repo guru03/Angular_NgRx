@@ -17,7 +17,11 @@ export class AddBlog {
   addBlogForm: FormGroup;
   blog: BlogInterface | undefined;
 
-  constructor(private fb: FormBuilder, private store: Store<AppState>, private routes: ActivatedRoute, private router: Router) {
+  constructor(private fb: FormBuilder, 
+    private store: Store<AppState>, 
+    private routes: ActivatedRoute, 
+    private router: Router) {
+      
     this.addBlogForm = this.fb.group({
       title: new FormControl(null, [Validators.required, Validators.minLength(5)]),
       content: new FormControl(null, [Validators.required, Validators.minLength(20)]),
