@@ -3,6 +3,7 @@ import { NgRx } from './angular-interview/ng-rx/ng-rx';
 import { Home } from './home/home';
 import { About } from './about/about';
 import { Contact } from './contact/contact';
+import { Signals } from './signals/signals';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,11 @@ export const routes: Routes = [
     component: NgRx,
   },
   {
+    path: '',
+    loadChildren: () =>
+      import('./auth/auth.routes').then(m => m.AUTH_ROUTES)
+  },
+  {
     path: 'counter',
     loadComponent: () =>
       import('./counter/counter/counter').then(m => m.Counter)
@@ -25,11 +31,16 @@ export const routes: Routes = [
   {
     path: 'blogs',
     loadChildren: () =>
-      import('./blogs/blogs/blogs-routes').then(m => m.routes)
+      import('./blogs/blogs-routes').then(m => m.routes)
   },
+
   {
     path: 'about',
     component: About,
+  },
+   {
+    path: 'signals',
+    component: Signals,
   },
   {
     path: 'contact',

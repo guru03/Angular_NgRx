@@ -3,7 +3,7 @@ import { QuestionsState, QuestionStateInterface } from '../state/questions.state
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/app.state';
 import { selectQuestions } from '../state/question.selector';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
@@ -21,6 +21,16 @@ export class NgRx {
 
   ngOnInit(): void {
     this.questionList$ = this.store.select(selectQuestions);
+  }
+
+  filterByCategory(category: string): void {
+    if (category === 'All') {
+      this.questionList$ = this.store.select(selectQuestions);
+    } else {
+      this.questionList$ = this.store.select(selectQuestions).pipe(
+        map(questions => questions.filter(q => q.category === category))
+      );
+    }
   }
 
   setHtml(content: string): SafeHtml {

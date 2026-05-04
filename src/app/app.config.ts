@@ -6,13 +6,15 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { appReducer } from './store/app.reducer';
+import { provideRouterStore } from '@ngrx/router-store';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes), 
+    provideRouter(routes),
     provideClientHydration(withEventReplay()),
     provideStore(appReducer),
-    provideStoreDevtools({ logOnly: !isDevMode() })
+    provideStoreDevtools({ logOnly: !isDevMode() }),
+    provideRouterStore()
 ]
 };

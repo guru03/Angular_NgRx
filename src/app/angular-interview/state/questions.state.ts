@@ -3,6 +3,7 @@ export interface QuestionStateInterface {
     category: string;
     question: string;
     answer: string;
+    answer2?: string;
 }
 
 export interface QuestionsState {
@@ -32,14 +33,14 @@ export const initialState: QuestionsState = {
                                 <li><strong class="fw-semibold">Selectors:</strong> Functions that extract specific pieces of state from the store.</li>
                             </ul>`
             },
-            
+
             {
                 id: 3,
                 category:   "NgRx",
                 question:   "What are Effects in NgRx?",
                 answer:     "Effects are used to handle side effects in your application, such as fetching data from an API or performing other asynchronous operations. They listen for specific actions and can dispatch new actions based on the results of those operations."
             },
-            
+
             {
                 id: 4,
                 category:   "NgRx",
@@ -58,6 +59,13 @@ export const initialState: QuestionsState = {
                 question:   "How do you set up NgRx in an Angular application?",
                 answer:     "To set up NgRx in an Angular application, you need to install the @ngrx/store package, create a StoreModule in your AppModule, define your state, actions, reducers, and selectors, and then use the Store service to dispatch actions and select state in your components."
             },
+            {
+                id: 7,
+                category:   "NgRx",
+                question:   "what is ngrx router?",
+                answer:     "NgRx Router is a library that integrates the Angular Router with NgRx Store, allowing you to manage router state in your application using the same principles as your application state. It provides actions and selectors for working with the router state, making it easier to synchronize the router with your application's state management.",
+                answer2:    "NgRx Router (via @ngrx/router-store) is a library that connects Angular’s Router with the NgRx Store, allowing you to manage and observe navigation state as part of your application’s global state. It dispatches actions during each navigation cycle, making route changes predictable, testable, and easier to integrate with other state-managed features."
+            },
 
             {
                 id: 7,
@@ -73,29 +81,63 @@ export const initialState: QuestionsState = {
             },
             {
                 id: 9,
-                category:   "JavaScript",
-                question:   "What is the difference between let, const, and var in JavaScript?",
-                answer:     "In JavaScript, let and const are block-scoped variables introduced in ES6, while var is function-scoped. let allows reassignment of its value, whereas const declares a constant reference to a value that cannot be reassigned. var can be hoisted and is function-scoped, which can lead to unexpected behavior in certain scenarios."
+                category:   "Angular",
+                question:   "What are HTTP interceptors in Angular and how do they work?",
+                answer:     "HTTP interceptors in Angular are a powerful way to modify HTTP requests and responses globally. They work by implementing the HttpInterceptor interface, allowing you to intercept and manipulate HTTP requests before they are sent to the server and responses before they are processed by the application. Common use cases include adding authentication tokens, logging, error handling, and modifying headers."
             },
             {
                 id: 10,
+                category:   "Angular",
+                question:   "What is an HTTP Interceptor?",
+                answer:     "HTTP Interceptors are a middleware mechanism in Angular's HttpClient module that intercepts HTTP requests and responses. They allow us to intercept outgoing HTTP requests or incoming HTTP responses and perform operations such as modifying request headers, handling errors, adding authentication tokens, caching responses, and logging."
+            },
+            {
+                id: 10,
+                category:   "Angular",
+                question:   "What are lifecycle hooks in Angular?",
+                answer:     "Lifecycle hooks in Angular are special methods that allow you to tap into key moments in a component's lifecycle, such as when it is created, updated, or destroyed. Some common lifecycle hooks include ngOnInit (called after the component is initialized), ngOnChanges (called when input properties change), ngOnDestroy (called just before the component is destroyed), and ngAfterViewInit (called after the component's view has been fully initialized). These hooks provide opportunities to perform initialization, cleanup, or respond to changes in the component's state."
+            }, 
+            {
+                id: 10,
+                category:   "Signals",
+                question:   "What are Signals in Angular?",
+                answer:     "Signals in Angular is essentially a wrapper around a value that notifies consumers (funtions, components, or services) whenever the value changes. this allow for a reactive data flow, where changes in the signal's value can trigger updateds elsewhere in the application."
+            },
+            {
+                id: 10,
+                category:   "JavaScript",
+                question:   "What are lifecycle hooks in Angular?",
+                answer:     `Every component in Angular has a lifecycle, and different phases it goes through from the time of creation to the time it's destroyed. Angular provides hooks to tap into these phases and trigger changes at specific phases in a lifecycle.
+                            <ul class="list-items">
+                                <li><strong class="fw-semibold">ngOnChanges:</strong> Called before ngOnInit and whenever one or more data-bound input properties change.</li>
+                                <li><strong class="fw-semibold">ngOnInit:</strong> Called once, after the first ngOnChanges. This is where you can perform component initialization.</li>   
+                                <li><strong class="fw-semibold">ngDoCheck:</strong> Called during every change detection run, immediately after ngOnChanges and ngOnInit.</li>
+                                <li><strong class="fw-semibold">ngAfterContentInit:</strong> Called once after the first ngDoCheck when the component's content has been fully initialized.</li>
+                                <li><strong class="fw-semibold">ngAfterContentChecked:</strong> Called after ngAfterContentInit and every subsequent ngDoCheck when the component's content has been checked.</li>
+                                <li><strong class="fw-semibold">ngAfterViewInit:</strong> Called once after the first ngAfterContentChecked when the component's view has been fully initialized.</li>
+                                <li><strong class="fw-semibold">ngAfterViewChecked:</strong> Called after ngAfterViewInit and every subsequent ngAfterContentChecked when the component's view has been checked.</li>
+                                <li><strong class="fw-semibold">ngOnDestroy:</strong> Called just before the component is destroyed. This is where you can perform cleanup, such as unsubscribing from observables or detaching event handlers.</li>
+                            </ul>`
+            },
+            {
+                id: 11,
                 category:   "JavaScript",
                 question:   "What are closures in JavaScript?",
                 answer:     "A closure in JavaScript is a function that has access to its own scope, the outer function's scope, and the global scope. It allows a function to access variables from an enclosing scope even after the outer function has finished executing. Closures are commonly used for data privacy and creating functions with persistent state."
             },
             {
-                id: 11,
+                id: 12,
                 category:   "JavaScript",
                 question:   "What is the difference between slice() and splice() in JavaScript?",
                 answer:     `<ul class="list-items">
                                 <li><strong class="fw-semibold">slice():</strong> is a method that returns a shallow copy of a portion of an array into a new array, without modifying the original array. It takes two arguments: the start index and the end index (exclusive).</li>
                                 <li><strong class="fw-semibold">splice():</strong> is a method that changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. It takes three arguments: the start index, the number of elements to remove, and any number of elements to add.</li>
                             </ul>`
-                
-                  
+
+
             },
             {
-                id: 12,
+                id: 13,
                 category:   "JavaScript",
                 question:   "what is the difference between == and === in JavaScript?",
                 answer:     "In JavaScript, == is the equality operator that performs type coercion, meaning it converts the operands to the same type before making the comparison. For example, 5 == '5' would return true because the string '5' is coerced to the number 5. On the other hand, === is the strict equality operator that does not perform type coercion and requires both the value and type to be the same for it to return true. So, 5 === '5' would return false because they are of different types."

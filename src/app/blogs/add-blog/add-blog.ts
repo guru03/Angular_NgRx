@@ -39,12 +39,12 @@ export class AddBlog {
     // });
   };
 
-  blogFormCreate() {
-    this.addBlogForm = this.fb.group({
-      title: new FormControl(null, [Validators.required, Validators.minLength(5)]),
-      content: new FormControl(null, [Validators.required, Validators.minLength(20)]),
-    });
-  }
+  // blogFormCreate() {
+  //   this.addBlogForm = this.fb.group({
+  //     title: new FormControl(null, [Validators.required, Validators.minLength(5)]),
+  //     content: new FormControl(null, [Validators.required, Validators.minLength(20)]),
+  //   });
+  // }
 
   onAddPost(): void {
     if (this.addBlogForm.invalid) {

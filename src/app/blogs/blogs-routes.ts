@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { AddBlog } from '../add-blog/add-blog';
-import { Blogs } from './blogs';
+import { AddBlog } from './add-blog/add-blog';
+import { Blogs } from './blogs/blogs';
 
 
 export const routes: Routes = [
