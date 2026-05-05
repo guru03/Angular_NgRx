@@ -26,11 +26,11 @@ export const initialState: QuestionsState = {
                 question:   "What are the key concepts of ngrx and how do they work?",
                 answer:     `<span>There are four key concepts in ngrx:</span>
                             <ul class="list-items">
-                                <li><strong class="fw-semibold">Store:</strong> The Store is a centralized state container that holds the application state and allows components to access and update it.</li>
-                                <li><strong class="fw-semibold">Actions:</strong> Objects that describe what happened in the application.</li>
-                                <li><strong class="fw-semibold">Reducers:</strong> Reducers are pure functions that take the current state and an action as arguments and return a
+                                <li><span class="font-medium">Store:</span> The Store is a centralized state container that holds the application state and allows components to access and update it.</li>
+                                <li><span class="font-medium">Actions:</span> Objects that describe what happened in the application.</li>
+                                <li><span class="font-medium">Reducers:</span> Reducers are pure functions that take the current state and an action as arguments and return a
                                         new state. They specify how the application's state changes in response to actions sent to the store.</li>
-                                <li><strong class="fw-semibold">Selectors:</strong> Functions that extract specific pieces of state from the store.</li>
+                                <li><span class="font-medium">Selectors:</span> Functions that extract specific pieces of state from the store.</li>
                             </ul>`
             },
 
@@ -109,14 +109,14 @@ export const initialState: QuestionsState = {
                 question:   "What are lifecycle hooks in Angular?",
                 answer:     `Every component in Angular has a lifecycle, and different phases it goes through from the time of creation to the time it's destroyed. Angular provides hooks to tap into these phases and trigger changes at specific phases in a lifecycle.
                             <ul class="list-items">
-                                <li><strong class="fw-semibold">ngOnChanges:</strong> Called before ngOnInit and whenever one or more data-bound input properties change.</li>
-                                <li><strong class="fw-semibold">ngOnInit:</strong> Called once, after the first ngOnChanges. This is where you can perform component initialization.</li>   
-                                <li><strong class="fw-semibold">ngDoCheck:</strong> Called during every change detection run, immediately after ngOnChanges and ngOnInit.</li>
-                                <li><strong class="fw-semibold">ngAfterContentInit:</strong> Called once after the first ngDoCheck when the component's content has been fully initialized.</li>
-                                <li><strong class="fw-semibold">ngAfterContentChecked:</strong> Called after ngAfterContentInit and every subsequent ngDoCheck when the component's content has been checked.</li>
-                                <li><strong class="fw-semibold">ngAfterViewInit:</strong> Called once after the first ngAfterContentChecked when the component's view has been fully initialized.</li>
-                                <li><strong class="fw-semibold">ngAfterViewChecked:</strong> Called after ngAfterViewInit and every subsequent ngAfterContentChecked when the component's view has been checked.</li>
-                                <li><strong class="fw-semibold">ngOnDestroy:</strong> Called just before the component is destroyed. This is where you can perform cleanup, such as unsubscribing from observables or detaching event handlers.</li>
+                                <li><span class="font-medium">ngOnChanges:</span> Called before ngOnInit and whenever one or more data-bound input properties change.</li>
+                                <li><span class="font-medium">ngOnInit:</span> Called once, after the first ngOnChanges. This is where you can perform component initialization.</li>   
+                                <li><span class="font-medium">ngDoCheck:</span> Called during every change detection run, immediately after ngOnChanges and ngOnInit.</li>
+                                <li><span class="font-medium">ngAfterContentInit:</span> Called once after the first ngDoCheck when the component's content has been fully initialized.</li>
+                                <li><span class="font-medium">ngAfterContentChecked:</span> Called after ngAfterContentInit and every subsequent ngDoCheck when the component's content has been checked.</li>
+                                <li><span class="font-medium">ngAfterViewInit:</span> Called once after the first ngAfterContentChecked when the component's view has been fully initialized.</li>
+                                <li><span class="font-medium">ngAfterViewChecked:</span> Called after ngAfterViewInit and every subsequent ngAfterContentChecked when the component's view has been checked.</li>
+                                <li><span class="font-medium">ngOnDestroy:</span> Called just before the component is destroyed. This is where you can perform cleanup, such as unsubscribing from observables or detaching event handlers.</li>
                             </ul>`
             },
             {
@@ -130,8 +130,8 @@ export const initialState: QuestionsState = {
                 category:   "JavaScript",
                 question:   "What is the difference between slice() and splice() in JavaScript?",
                 answer:     `<ul class="list-items">
-                                <li><strong class="fw-semibold">slice():</strong> is a method that returns a shallow copy of a portion of an array into a new array, without modifying the original array. It takes two arguments: the start index and the end index (exclusive).</li>
-                                <li><strong class="fw-semibold">splice():</strong> is a method that changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. It takes three arguments: the start index, the number of elements to remove, and any number of elements to add.</li>
+                                <li><span class="font-medium">slice():</span> is a method that returns a shallow copy of a portion of an array into a new array, without modifying the original array. It takes two arguments: the start index and the end index (exclusive).</li>
+                                <li><span class="font-medium">splice():</span> is a method that changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. It takes three arguments: the start index, the number of elements to remove, and any number of elements to add.</li>
                             </ul>`
 
 

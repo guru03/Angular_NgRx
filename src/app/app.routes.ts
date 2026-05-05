@@ -3,7 +3,7 @@ import { NgRx } from './angular-interview/ng-rx/ng-rx';
 import { Home } from './home/home';
 import { About } from './about/about';
 import { Contact } from './contact/contact';
-import { Signals } from './signals/signals';
+import { SignalComponent } from './signals/SignalComponent';
 
 export const routes: Routes = [
   {
@@ -11,11 +11,15 @@ export const routes: Routes = [
     component: Home
   },
   {
+    path: 'dashboard',
+    component: Home
+  },
+  {
     path: 'home',
     component: Home
   },
   {
-    path: 'ngrx',
+    path: 'Angular-Interview',
     component: NgRx,
   },
   {
@@ -38,14 +42,15 @@ export const routes: Routes = [
     path: 'about',
     component: About,
   },
-   {
+  {
     path: 'signals',
-    component: Signals,
+    component: SignalComponent,
   },
   {
     path: 'contact',
     component: Contact,
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  // { path: '', redirectTo: 'home', pathMatch: 'full' },
+  // { path: '**', redirectTo: 'home', pathMatch: 'full' },
 
 ];

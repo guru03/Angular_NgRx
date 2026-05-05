@@ -11,10 +11,8 @@
     p{
         font-size: 18px;
     }
-    .font-18{
-        font-size: 18px;
-    }
-    .fw-semibold{
+    
+    .font-medium{
         font-weight: 500;
     }
 }
@@ -40,6 +38,10 @@
         &:hover{
             background-color: #e9ecef;
         }
+        &.active{
+            background-color: #007bff;
+            color: white;
+        }   
     }
 }
 

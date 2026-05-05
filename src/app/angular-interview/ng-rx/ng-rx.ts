@@ -1,29 +1,38 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, signal, ViewEncapsulation } from '@angular/core';
 import { QuestionsState, QuestionStateInterface } from '../state/questions.state';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/app.state';
-import { selectQuestions } from '../state/question.selector';
+import { selectQuestions, selectQuestionsByCategory } from '../state/question.selector';
 import { map, Observable } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgClass } from '@angular/common';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-ng-rx',
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, NgClass],
   templateUrl: './ng-rx.html',
   styleUrls: ['./ng-rx.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class NgRx {
+  activeCategory = signal('All');
+  // activeCategory: string = 'All';
   questionList$: Observable<QuestionStateInterface[]> | undefined;
 
-  constructor(private store: Store<AppState>, private sanitizer: DomSanitizer ) { } 
+  constructor(private store: Store<AppState>, private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
     this.questionList$ = this.store.select(selectQuestions);
   }
 
   filterByCategory(category: string): void {
+    this.activeCategory.set(category);
+    this.questionList$ = this.store.select(selectQuestionsByCategory(category));
+  }
+
+  // Not using bellow method, just for testing purpose
+  filterByCategoryTesting(category: string) {
+    this.activeCategory = signal(category);
     if (category === 'All') {
       this.questionList$ = this.store.select(selectQuestions);
     } else {
