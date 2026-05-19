@@ -1,5 +1,5 @@
 import { Component, signal, ViewEncapsulation } from '@angular/core';
-import { QuestionsState, QuestionStateInterface } from '../state/questions.state';
+import { QuestionStateInterface } from '../state/questions.state';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../store/app.state';
 import { selectQuestions, selectQuestionsByCategory } from '../state/question.selector';

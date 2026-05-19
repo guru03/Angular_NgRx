@@ -1,19 +1,26 @@
 <div class="container-fluid my-5">
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <h3 class="mb-4 text-xl">Categories</h3>
             <div class="side-panel">
                 <ul class="list-group">
-                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'All'}" (click)="filterByCategory('All')">All</li>
-                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'Angular'}" (click)="filterByCategory('Angular')">Angular</li>
-                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'NgRx'}" (click)="filterByCategory('NgRx')">NgRx</li>
-                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'Signals'}" (click)="filterByCategory('Signals')">Signals</li>
-                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'JavaScript'}" (click)="filterByCategory('JavaScript')">JavaScript</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'All'}"
+                        (click)="filterByCategory('All')">All</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'Angular'}"
+                        (click)="filterByCategory('Angular')">Angular</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'NgRx'}"
+                        (click)="filterByCategory('NgRx')">NgRx</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'Signals'}"
+                        (click)="filterByCategory('Signals')">Signals</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'JavaScript'}"
+                        (click)="filterByCategory('JavaScript')">JavaScript</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'HR'}"
+                        (click)="filterByCategory('HR')">HR</li>
                 </ul>
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
             <h3 class="mb-4 text-xl">NgRx Concepts</h3>
             @for (item of questionList$ | async; track $index) {
             <!-- @if (item.category === 'NgRx' || item.category === 'Angular' || item.category === 'JavaScript') { -->
@@ -36,5 +43,22 @@
             </div>
             }
         </div>
-    </div>
-</div>
+        <div class="col-md-3">
+            <h3 class="mb-4 text-xl">Categories</h3>
+            <div class="side-panel">
+                <ul class="list-group">
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'All'}"
+                        (click)="filterByCategory('All')">All</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'Angular'}"
+                        (click)="filterByCategory('Angular')">Angular</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'NgRx'}"
+                        (click)="filterByCategory('NgRx')">NgRx</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'Signals'}"
+                        (click)="filterByCategory('Signals')">Signals</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'JavaScript'}"
+                        (click)="filterByCategory('JavaScript')">JavaScript</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'HR'}"
+                        (click)="filterByCategory('HR')">HR</li>
+                </ul>
+            </div>
+        </div>

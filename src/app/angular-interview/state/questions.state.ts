@@ -38,7 +38,7 @@ export const initialState: QuestionsState = {
                 id: 3,
                 category:   "NgRx",
                 question:   "What are Effects in NgRx?",
-                answer:     "Effects are used to handle side effects in your application, such as fetching data from an API or performing other asynchronous operations. They listen for specific actions and can dispatch new actions based on the results of those operations."
+                answer:     "Effects are used to handle side effects in our application, such as fetching data from an API or performing other asynchronous operations. They listen for specific actions and can dispatch new actions based on the results of those operations."
             },
 
             {
@@ -68,43 +68,99 @@ export const initialState: QuestionsState = {
             },
 
             {
-                id: 7,
+                id: 8,
                 category:   "Angular",
                 question:   "What is lazy loading in Angular and how does it improve application performance?",
                 answer:     "Lazy loading in Angular is a design pattern where feature modules are loaded only when their routes are accessed, instead of at application startup. This reduces the initial bundle size, improves performance, and makes large applications more scalable. For example, a dashboard or reports module can be lazy-loaded so users only download it when they navigate there, not at app launch."
             },
             {
-                id: 8,
+                id: 9,
                 category:   "Angular",
                 question:   "What are pure Pipes in angular?",
                 answer:     "In Angular, pure pipes are the default type of pipes that only re-run when Angular detects a pure change—meaning a change in primitive values (string, number, boolean, symbol) or a change in object references (arrays, objects, dates). They do not re-execute for in-place mutations of objects or arrays, which makes them highly performant."
             },
             {
-                id: 9,
+                id: 10,
                 category:   "Angular",
                 question:   "What are HTTP interceptors in Angular and how do they work?",
                 answer:     "HTTP interceptors in Angular are a powerful way to modify HTTP requests and responses globally. They work by implementing the HttpInterceptor interface, allowing you to intercept and manipulate HTTP requests before they are sent to the server and responses before they are processed by the application. Common use cases include adding authentication tokens, logging, error handling, and modifying headers."
             },
             {
-                id: 10,
+                id: 11,
                 category:   "Angular",
                 question:   "What is an HTTP Interceptor?",
                 answer:     "HTTP Interceptors are a middleware mechanism in Angular's HttpClient module that intercepts HTTP requests and responses. They allow us to intercept outgoing HTTP requests or incoming HTTP responses and perform operations such as modifying request headers, handling errors, adding authentication tokens, caching responses, and logging."
             },
             {
-                id: 10,
+                id: 12,
                 category:   "Angular",
                 question:   "What are lifecycle hooks in Angular?",
                 answer:     "Lifecycle hooks in Angular are special methods that allow you to tap into key moments in a component's lifecycle, such as when it is created, updated, or destroyed. Some common lifecycle hooks include ngOnInit (called after the component is initialized), ngOnChanges (called when input properties change), ngOnDestroy (called just before the component is destroyed), and ngAfterViewInit (called after the component's view has been fully initialized). These hooks provide opportunities to perform initialization, cleanup, or respond to changes in the component's state."
             }, 
             {
-                id: 10,
-                category:   "Signals",
-                question:   "What are Signals in Angular?",
-                answer:     "Signals in Angular is essentially a wrapper around a value that notifies consumers (funtions, components, or services) whenever the value changes. this allow for a reactive data flow, where changes in the signal's value can trigger updateds elsewhere in the application."
+                id: 13,
+                category:   "Angular",
+                question:   "What are standalone components in Angular?",
+                answer:     "Standalone components in Angular are a new feature that allows developers to create components without the need for an NgModule. This simplifies the component creation process and reduces boilerplate code, making it easier to build and maintain Angular applications. Standalone components can be used directly in templates without being declared in an NgModule, which promotes better modularity and reusability."
             },
             {
-                id: 10,
+                id: 13,
+                category:   "Angular",
+                question:   "What is Ivy in Angular?",
+                answer:    `Ivy is the next-generation compilation and rendering pipeline for Angular. It replaced the older "View Engine" and became the default for all new applications starting with Angular 9.
+                            <div class="text-lg">Its primary purpose is to make Angular applications smaller, faster, and easier to debug.</div>
+                            <div class="text-lg">Some of the key benefits of Ivy include:</div>
+                            <ul class="list-items">
+                                <li><span class="font-medium">Smaller Bundle Sizes:</span> Ivy generates more efficient code, resulting in smaller bundle sizes and faster load times.</li>
+                                <li><span class="font-medium">Faster Compilation:</span> Ivy's incremental compilation allows for faster builds and quicker feedback during development.</li>
+                                <li><span class="font-medium">Improved Debugging:</span> Ivy provides better error messages and stack traces, making it easier to identify and fix issues in your code.</li>
+                                <li><span class="font-medium">Dynamic Component Loading:</span> Ivy enables the ability to load components dynamically at runtime, which can be useful for features like modals or dynamic forms.</li>
+                            </ul>`,
+                answer2:     `Ivy is Angular’s next-generation rendering and compilation engine, introduced as the default in Angular 9. It was designed to make Angular applications smaller, faster, and easier to debug, while enabling advanced features like dynamic component loading and better tree-shaking.`,
+            },
+            {
+                id: 13,
+                category:   "Angular",
+                question:   "What are Angular Guards?",
+                answer:     `Angular Guards are services that control access to routes in an Angular application. They are used to protect routes from unauthorized access or to prevent unwanted navigation.
+                            <div class="text-lg">There are common types of guards in Angular:</div>
+                            <ul class="list-items">
+                                <li><span class="font-medium">CanActivate:</span> Determines if a route can be activated.</li>
+                                <li><span class="font-medium">CanActivateChild:</span> Determines if child routes can be activated.</li>
+                                <li><span class="font-medium">CanDeactivate:</span> Determines if a route can be deactivated.</li>
+                            </ul>`
+            },
+            {
+                id: 14,
+                category:   "Signals",
+                question:   "What are Signals in Angular?",
+                answer:     `Signals in Angular is essentially a wrapper around a value that notifies consumers (funtions, components, or services) whenever the value changes. This allow for a reactive data flow, where changes in the signal's value can trigger updateds elsewhere in the application.
+                            <div class="text-lg">Characteristics of Signals:</div>
+                            <ul class="list-items">
+                                <li><span>They can hold any type of value: primitives like strings, numbers, booleans, or complex objects.</span></li>
+                                <li>Signals expose a getter function for reading their value.</li>
+                                <li>Signals notify Angular when their value is used, allowing Angular to track depencencies automatically. This is useful for creating reactive applications.</li>
+                            </ul>
+                            <div class="text-lg">There are two main types of signals:</div>
+                            <ul class="list-items">
+                                <li><span>Writable Signals:</span> These are signals that can be updated with a new value using a <code class="code-block">setter</code> function.</li>
+                                <li><span>Computed Signals:</span> These are signals that are derived from other signals and automatically update when their dependencies change.</li>
+                            </ul>`,
+                answer2:    "Signals in Angular are a reactive programming concept that allows you to create reactive data flows. A signal is a wrapper around a value that notifies consumers (functions, components, or services) whenever the value changes. This allows for a reactive data flow, where changes in the signal's value can trigger updates elsewhere in the application. Signals can be used to manage state and create dynamic, responsive user interfaces in Angular applications."
+            },
+            {
+                id: 15,
+                category:   "Signals",
+                question:   "What are the benefits of using Signals in Angular?",
+                answer:     `<ul class="list-items">
+                                <li><span class="font-medium">Reactive Data Flow:</span> Signals enable a reactive programming model, allowing components and services to automatically update when the underlying data changes.</li>
+                                <li><span class="font-medium">Automatic Dependency Tracking:</span> Angular can automatically track dependencies between signals, which simplifies state management and reduces the need for manual subscriptions.</li>
+                                <li><span class="font-medium">Improved Performance:</span> Signals can help optimize performance by minimizing unnecessary updates and re-renders, as Angular only updates components that depend on the changed signal.</li>
+                                <li><span class="font-medium">Simplified State Management:</span> Signals provide a more intuitive way to manage state in Angular applications, reducing boilerplate code and making it easier to reason about data flow.</li>
+                            </ul>`
+            },
+            {
+                id: 16,
                 category:   "JavaScript",
                 question:   "What are lifecycle hooks in Angular?",
                 answer:     `Every component in Angular has a lifecycle, and different phases it goes through from the time of creation to the time it's destroyed. Angular provides hooks to tap into these phases and trigger changes at specific phases in a lifecycle.
@@ -120,13 +176,13 @@ export const initialState: QuestionsState = {
                             </ul>`
             },
             {
-                id: 11,
+                id: 17,
                 category:   "JavaScript",
                 question:   "What are closures in JavaScript?",
                 answer:     "A closure in JavaScript is a function that has access to its own scope, the outer function's scope, and the global scope. It allows a function to access variables from an enclosing scope even after the outer function has finished executing. Closures are commonly used for data privacy and creating functions with persistent state."
             },
             {
-                id: 12,
+                id: 18,
                 category:   "JavaScript",
                 question:   "What is the difference between slice() and splice() in JavaScript?",
                 answer:     `<ul class="list-items">
@@ -137,10 +193,42 @@ export const initialState: QuestionsState = {
 
             },
             {
-                id: 13,
+                id: 19,
+                category:   "JavaScript",
+                question:   "What is the difference between call(), apply(), and bind() in JavaScript?",
+                answer:     `<ul class="list-items">
+                                <li><span class="font-medium">call():</span> is a method that invokes a function with a specified this value and arguments provided individually.</li>
+                                <li><span class="font-medium">apply():</span> is a method that invokes a function with a specified this value and arguments provided as an array.</li>
+                                <li><span class="font-medium">bind():</span> is a method that creates a new function with a specified this value and arguments, but does not invoke the function immediately.</li>
+                            </ul>`
+            },
+            {
+                id: 20,
+                category:   "JavaScript",
+                question:   "What is Local Storage?",
+                answer:     `Local Storage is a web storage API that allows developers to store key-value pairs in a web browser with no expiration date. It provides a way to persist data on the client side, allowing it to be accessed across sessions and page reloads. 
+                            <div class="text-lg">Local Storage is commonly used for storing user preferences, session data, or any information that needs to be retained between visits to a website.</div>
+                `
+            },
+            {
+                id: 21,
+                category:   "JavaScript",
+                question:   "What is Session Storage?",
+                answer:     `Session Storage is a web storage API that allows developers to store key-value pairs in a web browser with a session-based expiration. It provides a way to persist data on the client side, but the data is cleared when the browser tab or window is closed. 
+                            <div class="text-lg">Session Storage is commonly used for storing temporary data that is only needed during a single browsing session.</div>
+                `
+            },
+            {
+                id: 22,
                 category:   "JavaScript",
                 question:   "what is the difference between == and === in JavaScript?",
                 answer:     "In JavaScript, == is the equality operator that performs type coercion, meaning it converts the operands to the same type before making the comparison. For example, 5 == '5' would return true because the string '5' is coerced to the number 5. On the other hand, === is the strict equality operator that does not perform type coercion and requires both the value and type to be the same for it to return true. So, 5 === '5' would return false because they are of different types."
+            },
+            {
+                id: 23,
+                category:   "HR",
+                question:   "Introduce yourself",
+                answer:    "I'm a frontend developer with strong expertise in Angular. I focus on modern features like signals, standalone components, and RxJS for efficient API integration. I've designed modular architectures for authentication and asset management, and I enjoy optimizing performance through clean, testable code. I'm excited to bring these skills to a team that values scalable and maintainable applications."
             }
         ]
 }
