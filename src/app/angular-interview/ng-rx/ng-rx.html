@@ -17,13 +17,15 @@
                         (click)="filterByCategory('JavaScript')">JavaScript</li>
                     <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'HR'}"
                         (click)="filterByCategory('HR')">HR</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'MCP'}"
+                        (click)="filterByCategory('MCP')">MCP</li>
                 </ul>
             </div>
         </div>
         <div class="col-md-6">
             <h3 class="mb-4 text-xl">NgRx Concepts</h3>
             @for (item of questionList$ | async; track $index) {
-            <!-- @if (item.category === 'NgRx' || item.category === 'Angular' || item.category === 'JavaScript') { -->
+            @if (item.visible === true && (activeCategory() === 'All' || item.category === activeCategory())) {
             <div class="question shadow-sm">
                 <div class="flex">
                     <div class="number">
@@ -41,7 +43,7 @@
                     </div>
                 </div>
             </div>
-            }
+            }}
         </div>
         <div class="col-md-3">
             <h3 class="mb-4 text-xl">Categories</h3>
@@ -59,6 +61,16 @@
                         (click)="filterByCategory('JavaScript')">JavaScript</li>
                     <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'HR'}"
                         (click)="filterByCategory('HR')">HR</li>
+                    <li class="list-group-item" [ngClass]="{'active': activeCategory() == 'MCP'}"
+                        (click)="filterByCategory('MCP')">MCP</li>
                 </ul>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="scrollToTop">
+    <div class="cursor-pointer" (click)="scrollToTop()">
+        <img src="scrollTop.png" alt="Back to Top">
+    </div>
+</div>"

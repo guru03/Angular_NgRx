@@ -18,6 +18,7 @@ export class NgRx {
   activeCategory = signal('All');
   // activeCategory: string = 'All';
   questionList$: Observable<QuestionStateInterface[]> | undefined;
+  scrollProgress = signal(0);
 
   constructor(private store: Store<AppState>, private sanitizer: DomSanitizer) { }
 
@@ -40,6 +41,10 @@ export class NgRx {
         map(questions => questions.filter(q => q.category === category))
       );
     }
+  }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   setHtml(content: string): SafeHtml {

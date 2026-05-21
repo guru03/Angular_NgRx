@@ -67,3 +67,25 @@ $codeColor: #ebebeb;
         font-size: 16px;
     }
 }
+
+.scrollToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background-color: #007bff;
+    transition: width 0.2s ease-out;
+    border-radius: 0 0 3px 3px;
+}
